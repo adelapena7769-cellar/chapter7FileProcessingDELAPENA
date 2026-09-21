@@ -13,8 +13,3 @@ for line in fhand:
         print(f"{parts[0]} {sum}")
 
 print(f"Count: {count}, Average: {sum/count}")
-
-
-
-
-
