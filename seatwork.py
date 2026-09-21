@@ -1,14 +1,18 @@
-file_name = input('Enter a File name: ')
+fname = input('Enter a File name: ')
+fhand = open(fname)
+count = 0
+sum = 0
 
-    if file_name == "done":
-        break
+for line in fhand:
 
-    try:
-        file_name = string(file_name)
+    parts = line.split(':')
 
-    except:
-        print("Invalid File")
+    if line.startswith('X-DSPAM-Confidence:') and len(parts)>1:
+        count += 1
+        sum += float(parts[1])
+        print(f"{parts[0]} {sum}")
 
+print(f"Count: {count}, Average: {sum/count}")
 
 
 
